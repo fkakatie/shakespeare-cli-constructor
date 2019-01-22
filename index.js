@@ -26,9 +26,9 @@ function loadGame() {
       console.log(chalk.bold("        /_  __,   ,__,   __   ,____,  __,   ,__,     "));
       console.log(chalk.bold("      _/ (_(_/(__/ / (__(_/__/ / / (_(_/(__/ / (_    "));
       console.log(chalk.bold("                        _/_                          "));
-      console.log(chalk.bold.gray("  Guess the word that") + chalk.bold("  (/    ")); 
-      console.log(chalk.bold.gray(" Shakespearen created!"));
-
+      console.log(chalk.bold.gray("     Guess the word") + chalk.bold("    (/    ")); 
+      console.log(chalk.bold.gray(" yond Shakespeare did create!"));
+  
     startGame();
 
 }
@@ -80,7 +80,7 @@ function userInput() {
 function validateGuess(userGuess) {
 
     if (allGuesses.includes(userGuess)) {
-        console.log(chalk.inverse('\nYou\'ve already guessed ' + userGuess + '!'));
+        console.log(chalk.inverse('\nThou hast already guessed ' + userGuess + '!'));
     } 
     else if (guessThis.word.indexOf(userGuess) !== -1) {
         correctGuesses.push(userGuess);
@@ -99,8 +99,8 @@ function validateGuess(userGuess) {
 
     if (guessesLeft < 1) {
 
-        console.log(chalk.bold.red('\nYou lose!'));
-        console.log('The word was ' + chalk.bold.yellow(guessThis.word) + '.');
+        console.log(chalk.bold.red('\nAlas, thou hast failed!'));
+        console.log('The word wast ' + chalk.bold.yellow(guessThis.word) + '.');
         console.log(chalk.red('>') + ' SCORE: ' + chalk.bold.red(score) + '\n');
         
         playAgain();
@@ -110,8 +110,8 @@ function validateGuess(userGuess) {
 
         score++;
 
-        console.log(chalk.bold.green('\nYou win!'));
-        console.log('The word was ' + chalk.bold.yellow(guessThis.word) + '.');
+        console.log(chalk.bold.green('\nHey-ho, thou art correct!'));
+        console.log('The word wast ' + chalk.bold.yellow(guessThis.word) + '.');
         console.log(chalk.green('>') + ' SCORE: ' + chalk.bold.green(score) + '\n');
 
         playAgain();
@@ -120,8 +120,8 @@ function validateGuess(userGuess) {
     else {
         
         guessThis.returnString();
-        console.log('Incorrect Guesses: ' + chalk.bold(incorrectGuesses));
-        console.log('     Guesses Left: ' + chalk.bold(guessesLeft) + '\n');
+        console.log('False Guesses: ' + chalk.bold(incorrectGuesses));
+        console.log(' Guesses Left: ' + chalk.bold(guessesLeft) + '\n');
         userInput();
 
     }
@@ -158,16 +158,17 @@ function playAgain() {
         {
             name: 'replay',
             type: 'confirm',
-            message: 'Would you like to play again?'
+            message: 'Would thee like to playeth once more?',
+            default: true
         }
     ]).then(function(input) {
     
         input.replay ? 
             startGame() : 
             console.log(
-                chalk.inverse('\nIf you change your mind, you play again by typing ') + 
-                chalk.inverse.bold('node index') + 
-                chalk.inverse(' in the command line.'));
+                chalk.inverse('\nIf \'t be true thee changeth thy mind, playeth again by entering') + 
+                chalk.inverse.bold(' node index ') + 
+                chalk.inverse('in the command line.'));
     
     });
 
