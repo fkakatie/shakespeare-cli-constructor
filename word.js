@@ -1,22 +1,13 @@
-// **Word.js**: Contains a constructor, Word that depends on the Letter constructor. 
-// This is used to create an object representing the current word the user is attempting to guess. That means the constructor should define:
-
-//   *  An array of `new` Letter objects representing the letters of the underlying word
-
-//   *  A function that returns a string representing the word. 
-//      This should call the function on each letter object (the first function defined in `Letter.js`) that displays the character or an underscore and concatenate those together.
-
-//   *  A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
-
 // import the Letter constructor
 var Letter = require('./letter.js');
 
+// create ne word object
 function Word(word) {
 
     this.word = word;
+    this.objArray = []; // array to store word letter objects
 
-    this.objArray = [];
-
+    // push all letter objects to objArray
     for (var i = 0; i < word.length; i++) {
         var newLetter = new Letter(word[i]);
         this.objArray.push(newLetter);
@@ -24,18 +15,21 @@ function Word(word) {
 
     this.returnString = function() {
 
-        var wordString = '';
+        var wordString = ''; // variable to hold random word string to print to console
 
+        // create random word string based on letter objects
         for (var j = 0; j < this.objArray.length; j++) {
             wordString += this.objArray[j].returnCharacter() + " ";
         }
 
+        // log random word string to console
         console.log('\n' + wordString + '\n');
         
     }
 
     this.checkGuess = function(userGuess) {
 
+        // check each user guess against random word string
         for (var k = 0; k < this.objArray.length; k++) {
             this.objArray[k].checkCharacter(userGuess);
         }
@@ -44,4 +38,5 @@ function Word(word) {
 
 }
 
+// EXPORT word.js
 module.exports = Word;
