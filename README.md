@@ -35,7 +35,7 @@ This project requires [`npm`](https://www.npmjs.com) to install third party libr
 
 ## Where users can get help with this project ## 
 
-A **video tutorial** will be available soon, but if you have any further questions about this project, visit my portfolio and [send me a message](https://fkakatie.github.io/responsive-portfolio/contact.html).
+A [**video tutorial**](https://drive.google.com/file/d/17p8qUTmzhw1bADTmKjce4b7yaRGh3TW2/view) is available, but if you have any further questions about this project, visit my portfolio and [send me a message](https://fkakatie.github.io/responsive-portfolio/contact.html).
 
 ## Who maintains this project ##
 
