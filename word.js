@@ -1,7 +1,7 @@
 // import the Letter constructor
 var Letter = require('./letter.js');
 
-// create ne word object
+// create new word object
 function Word(word) {
 
     this.word = word;
